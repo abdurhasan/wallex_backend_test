@@ -13,7 +13,7 @@
  
 2.  npm run seed
 
-3.  npm run dev    or   npm run start
+3.  npm run dev    or   npm start
    
 
 

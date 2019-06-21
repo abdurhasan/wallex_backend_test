@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const SALT_I = 10;
 require('dotenv').config();
 
 const userSchema = mongoose.Schema(
@@ -22,7 +21,7 @@ userSchema.pre(
   function(next) {
     var user = this;
     if (user.password) {
-      bcrypt.hash(user.password, SALT_I, function (err, hash) {
+      bcrypt.hash(user.password, Number(process.env.SALT_I), function (err, hash) {
         if (err) return next(err);
         user.password = hash;
         next();
@@ -30,8 +29,7 @@ userSchema.pre(
     } else {
       next();
     }
-  },
-  { timestamps: true }
+  }
 );
 
 userSchema.methods.comparePassword = function(candidatePassword, cb) {

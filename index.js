@@ -17,12 +17,14 @@ mongoose.connection.on('error', function (err) {
 
 //ROUTER
 const userRouter = require('./src/routers/userRouter')
+const adminRouter = require('./src/routers/adminRouter')
 
 app.use(cookieParser())
 app.use(cors({ exposedHeaders: "*" }));
 app.use(bodyParser.json());
 
 //Router
+app.use('/api/', adminRouter);
 app.use('/api/user', userRouter);
 
 
