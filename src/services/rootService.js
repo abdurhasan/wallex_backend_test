@@ -112,7 +112,7 @@ const rootService = {
                 if (err) return res.json({ success: false, message: err });
                 return res.status(200).json({
                     success: true,
-                    deleted:user
+                    deleted: user
 
                 });
             });
@@ -121,7 +121,7 @@ const rootService = {
         } catch (error) {
             return res.status(400).json({ success: false, message: error });
         }
-    },    
+    },
     updateUser: (req, res) => {
         try {
             if (!req.body.email || !req.body.password)
@@ -129,7 +129,7 @@ const rootService = {
                     success: false,
                     message: 'Email dan password harus diisi!'
                 });
-            User.findByIdAndUpdate({ _id: req.params.user_id },req.body, function (err, user) {
+            User.findByIdAndUpdate({ _id: req.params.user_id }, req.body, function (err, user) {
                 if (err) return res.json({ success: false, message: err });
                 return res.status(200).json({
                     success: true,
@@ -165,7 +165,7 @@ const rootService = {
                 if (err) return res.json({ success: false, message: err });
                 return res.status(200).json({
                     success: true,
-                    deleted:bank
+                    deleted: bank
 
                 });
             });
@@ -182,7 +182,7 @@ const rootService = {
                     success: true,
                     message: req.params.bank_id + '  berhasil diupdate'
                 });
-            Bank.findByIdAndUpdate({ _id: req.params.bank_id },req.body, function (err, bank) {
+            Bank.findByIdAndUpdate({ _id: req.params.bank_id }, req.body, function (err, bank) {
                 if (err) return res.json({ success: false, message: err });
                 return res.status(200).json({
                     success: true,
@@ -195,7 +195,63 @@ const rootService = {
         } catch (error) {
             return res.status(400).json({ success: false, message: error });
         }
-    }
+    },
+
+    detailAccount: (req, res) => {
+        try {
+            Account.findOne({ _id: req.params.account_id }, function (err, account) {
+                if (err) return res.json({ success: false, message: err });
+                return res.status(200).json({
+                    success: true,
+                    account
+                });
+            });
+
+
+        } catch (error) {
+            return res.status(400).json({ success: false, message: error });
+        }
+    },
+    deleteAccount: (req, res) => {
+        try {
+            Account.findOneAndRemove({ _id: req.params.account_id }, function (err, account) {
+                if (err) return res.json({ success: false, message: err });
+                return res.status(200).json({
+                    success: true,
+                    deleted: account
+
+                });
+            });
+
+
+        } catch (error) {
+            return res.status(400).json({ success: false, message: error });
+        }
+    },
+    updateAccount: (req, res) => {
+        try {
+            if (!req.body.user_id || !req.body.bank_id)
+                res.status(400).json({
+                    success: false,
+                    message: 'User dan Bank harus diisi !'
+                });
+                
+            Account.findOneAndUpdate({ _id: req.params.account_id }, req.body, function (err, account) {
+                if (err) return res.json({ success: false, message: err.message });
+                else{
+                    return res.status(200).json({
+                        success: true,
+                        message: req.params.account_id + '  berhasil diupdate'
+    
+                    });
+                }
+            });
+
+
+        } catch (error) {
+            return res.status(400).json({ success: false, message: error });
+        }
+    },
 };
 
 module.exports = rootService;

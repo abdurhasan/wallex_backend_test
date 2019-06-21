@@ -22,7 +22,9 @@ router.get('/:bank_id/detail_bank',admin, rootService.detailBank);
 router.delete('/:bank_id/delete_bank',admin, rootService.deleteBank);
 router.put('/:bank_id/update_bank',admin, rootService.updateBank);
 
-
+router.get('/:account_id/detail_account',admin, rootService.detailAccount);
+router.delete('/:account_id/delete_account',admin, rootService.deleteAccount);
+router.put('/:account_id/update_account',admin, rootService.updateAccount);
 
 module.exports = router;
 
