@@ -1,0 +1,26 @@
+[
+    {
+        "_id": "5d0a7810fc13ae194d000000",
+        "user_id": "5b2c1c0981e781b44909627d",
+        "bank_id": "5d0caf1efc13ae41ea000000",
+        "balance": "6908.44"
+    },
+    {
+        "_id": "5d0a7810fc13ae194d000001",
+        "user_id": "5b2c1c0981e781b44909627d",
+        "bank_id": "5b2c1c81255983b4795f8fda",
+        "balance": "1394.08"
+    },
+    {
+        "_id": "5d0a7810fc13ae194d000002",
+        "user_id": "5d0a7603fc13ae7f5100001d",
+        "bank_id": "5b2c1c88255983b4795f8fdb",
+        "balance": "2895.85"
+    },
+    {
+        "_id": "5d0a7810fc13ae194d000003",
+        "user_id": "5d0a7603fc13ae7f5100001e",
+        "bank_id": "5d0caf1efc13ae41ea000004",
+        "balance": "8183.26"
+    }
+]

@@ -1,0 +1,19 @@
+[{
+    "_id" : "5d0caf1efc13ae41ea000000",
+    "bank_name" : "Bank Mandiri"
+},
+
+{
+    "_id" : "5b2c1c81255983b4795f8fda",
+    "bank_name" : "Bank BCA"
+},
+{
+    "_id" : "5b2c1c88255983b4795f8fdb",
+    "bank_name" : "Bank BRI"
+},
+{
+    "_id" : "5d0caf1efc13ae41ea000004",
+    "bank_name" : "Bank CIMB NIAGA"
+}
+]
+

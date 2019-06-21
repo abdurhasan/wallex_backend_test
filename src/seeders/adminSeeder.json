@@ -1,0 +1,32 @@
+[
+    {
+        "_id": "5d0a73a6fc13ae7f51000017",
+        "email": "admin@mail.com",
+        "password": "admin",
+        "role": 1
+    },
+    {
+        "_id": "5d0a73a6fc13ae7f51000018",
+        "email": "nburleton1@reverbnation.com",
+        "password": "Glipizide",
+        "role": 0
+    },
+    {
+        "_id": "5d0a73a6fc13ae7f51000019",
+        "email": "aarnell2@facebook.com",
+        "password": "Acetaminophen, Dextromethorphan Hydrobromide, and Doxylamine Succinate",
+        "role": 1
+    },
+    {
+        "_id": "5d0a73a6fc13ae7f5100001a",
+        "email": "ryeandel3@odnoklassniki.ru",
+        "password": "formic acid",
+        "role": 0
+    },
+    {
+        "_id": "5d0a73a6fc13ae7f5100001b",
+        "email": "mtrail4@bloomberg.com",
+        "password": "Poverty Weed",
+        "role": 0
+    }
+]

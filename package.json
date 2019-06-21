@@ -1,0 +1,29 @@
+{
+  "name": "walex_test",
+  "participant": "abdurhasan20@gmail.com",
+  "version": "1.0.0",
+  "description": "it was awesome",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "seed": "node ./src/seeders",
+    "eslint": "node_modules/.bin/eslint --fix src/. --config .eslintrc.json"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.5",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.4",
+    "dotenv": "^7.0.0",
+    "express": "~4.16.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.4.19"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^5.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "prettier": "^1.18.2"
+  }
+}
