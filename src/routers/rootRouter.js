@@ -3,8 +3,9 @@ const express = require('express');
 const router = express.Router();
 
 const { admin } = require('../middlewares/admin');
+const { superadmin } = require('../middlewares/superadmin');
 
-/* GET home page. */
+/* ADMIN */
 router.post('/admin/sign_in', rootService.adminLogin);
 
 router.get('/users',admin, rootService.getUsers);
@@ -25,6 +26,9 @@ router.put('/:bank_id/update_bank',admin, rootService.updateBank);
 router.get('/:account_id/detail_account',admin, rootService.detailAccount);
 router.delete('/:account_id/delete_account',admin, rootService.deleteAccount);
 router.put('/:account_id/update_account',admin, rootService.updateAccount);
+
+/*  SUPER ADMIN */
+router.post('/admin/create',admin,superadmin ,rootService.createAdmin);
 
 module.exports = router;
 

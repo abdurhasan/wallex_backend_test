@@ -235,14 +235,14 @@ const rootService = {
                     success: false,
                     message: 'User dan Bank harus diisi !'
                 });
-                
+
             Account.findOneAndUpdate({ _id: req.params.account_id }, req.body, function (err, account) {
                 if (err) return res.json({ success: false, message: err.message });
-                else{
+                else {
                     return res.status(200).json({
                         success: true,
                         message: req.params.account_id + '  berhasil diupdate'
-    
+
                     });
                 }
             });
@@ -252,6 +252,28 @@ const rootService = {
             return res.status(400).json({ success: false, message: error });
         }
     },
+
+    createAdmin: (req, res) => {
+        try {
+            if (!req.body.email ||!req.body.role || !req.body.password || !req.body.retype_password || req.body.retype_password !== req.body.password) {
+                res.json({ success: false, message: ' Data harus diisi dengan benar ! ' });
+            };
+
+            const admin = new Admin(req.body);
+            admin.save((err, created) => {
+                if (err) return res.json({ success: false, message: err });
+                return res.status(200).json({
+                  success: true,
+                  created
+                });
+              });
+
+        } catch (error) {
+            return res.status(400).json({ success: false, message: error });
+        }
+    },
+
+
 };
 
 module.exports = rootService;

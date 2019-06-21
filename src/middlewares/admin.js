@@ -20,6 +20,7 @@ const admin = (req, res, next) => {
             message: 'Anda tidak memiliki akses'
           });
         else {          
+          req.admin_email=decoded.email
           next();
         }
       });
