@@ -6,31 +6,29 @@ require('dotenv').config();
 const userSchema = mongoose.Schema(
   {
     email: {
-      type: String,        
+      type: String,
       trim: true,
       unique: 1
-    },    
+    },
     password: {
-      type: String,              
-    }  
-  },{ timestamps: true }
+      type: String
+    }
+  },
+  { timestamps: true }
 );
 
-userSchema.pre(
-  'save',
-  function(next) {
-    var user = this;
-    if (user.password) {
-      bcrypt.hash(user.password, Number(process.env.SALT_I), function (err, hash) {
-        if (err) return next(err);
-        user.password = hash;
-        next();
-      });  
-    } else {
+userSchema.pre('save', function(next) {
+  var user = this;
+  if (user.password) {
+    bcrypt.hash(user.password, Number(process.env.SALT_I), function(err, hash) {
+      if (err) return next(err);
+      user.password = hash;
       next();
-    }
+    });
+  } else {
+    next();
   }
-);
+});
 
 userSchema.methods.comparePassword = function(candidatePassword, cb) {
   let actualPassword = this.password;

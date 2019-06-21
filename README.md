@@ -17,14 +17,21 @@
    
 
 
-## API example
+## API example as User
 
 
 
-1.  POST : http://localhost:3000/api/user/user_login
+1.  POST : http://localhost:3000/api/user/sign_in
             ```
             "email": "user123@mail.com"
             "password": "user123"
+            ```
+            OR
+
+            ```
+            API_KEY = 
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxMjNAbWFpbC5jb20iLCJwYXNzd29yZCI6InVzZXIxMjMiLCJpYXQiOjE1NjExMzQ5NDR9.2btH6vy3fb4HvOyVdE1y5Oua3UTB0ds-Ur1ycP2GM-o
+            
             ```
 
 

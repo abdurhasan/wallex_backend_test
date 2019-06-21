@@ -13,47 +13,30 @@ const bankSeeder = require('./bankSeeder.json');
 const accountSeeder = require('./accountSeeder.json');
 
 userSeeder.forEach(snap => {
-  snap['password'] = bcrypt.hashSync(snap.password, Number(process.env.SALT_I));    
+  snap['password'] = bcrypt.hashSync(snap.password, Number(process.env.SALT_I));
 });
 
 adminSeeder.forEach(snap => {
-  snap['password'] = bcrypt.hashSync(snap.password, Number(process.env.SALT_I));    
+  snap['password'] = bcrypt.hashSync(snap.password, Number(process.env.SALT_I));
 });
-
-
 
 try {
   mongoose.connect(process.env.DATABASE);
   mongoose.connection
-    .on('error', function (err) {
+    .on('error', function(err) {
       console.error('Error: Gagal koneksi ke MongoDB');
     })
     .on('open', () => {
-
-      User.insertMany(userSeeder)
-        .then((error, docs) => {
-
-
-          Admin.insertMany(adminSeeder)
-            .then((error, docs) => {
-  
-
-              Bank.insertMany(bankSeeder)
-                .then((error, docs) => {
-      
-
-
-                  Account.insertMany(accountSeeder)
-                    .then((error, docs) => {
-          
-                      process.exit(0)
-                    })
-                })
-            })
-        })
+      User.insertMany(userSeeder).then((error, docs) => {
+        Admin.insertMany(adminSeeder).then((error, docs) => {
+          Bank.insertMany(bankSeeder).then((error, docs) => {
+            Account.insertMany(accountSeeder).then((error, docs) => {
+              process.exit(0);
+            });
+          });
+        });
+      });
     });
-
-
 } catch (error) {
   console.error(error);
 }

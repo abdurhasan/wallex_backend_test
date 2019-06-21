@@ -17,20 +17,20 @@ mongoose.connection.on('error', function (err) {
 
 //ROUTER
 const userRouter = require('./src/routers/userRouter')
-const adminRouter = require('./src/routers/adminRouter')
+const rootRouter = require('./src/routers/rootRouter')
 
 app.use(cookieParser())
 app.use(cors({ exposedHeaders: "*" }));
 app.use(bodyParser.json());
 
 //Router
-app.use('/api/', adminRouter);
+app.use('/api', rootRouter);
 app.use('/api/user', userRouter);
 
 
 //NOT FOUND HANDLING
 app.use((req, res) => {
-        res.json({ success: false, error: '404 Page is not found' })
+    res.json({ success: false, error: '404 Page is not found' })
 });
 
 
@@ -39,7 +39,7 @@ app.use((req, res) => {
 
 
 app.listen(port, () => {
-        console.log(`App is running on port ${port}`);
+    console.log(`App is running on port ${port}`);
 });
 
 
