@@ -51,23 +51,16 @@
             API_KEY = 
             eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwicGFzc3dvcmQiOiJhZG1pbiIsImlhdCI6MTU2MTEzODUzMn0.eElvjrbN4FvENcmHQPtWghEqJj1WAawH4g6Ge37hBrM
             
-            ```
 
 
     
-2.  GET : http://localhost:3000/api/users
-                    ```OR
-        : http://localhost:3000/api/users?API_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwicGFzc3dvcmQiOiJhZG1pbiIsImlhdCI6MTU2MTEzNTExN30.P-Rupi4d8HpF-p-HQUxkTZM3VkBxmHnJlCafA0crmCY
+2.  GET : http://localhost:3000/api/users?API_KEY= ....
 
-            ```
-        
-3.  GET : http://localhost:3000/api/banks
-                    ```OR
-        : http://localhost:3000/api/banks?API_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwicGFzc3dvcmQiOiJhZG1pbiIsImlhdCI6MTU2MTEzNTExN30.P-Rupi4d8HpF-p-HQUxkTZM3VkBxmHnJlCafA0crmCY
-                    ```
 
-4.  GET : http://localhost:3000/api/accounts
-                    ```OR
         
-http://localhost:3000/api/accounts?API_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwicGFzc3dvcmQiOiJhZG1pbiIsImlhdCI6MTU2MTEzNTExN30.P-Rupi4d8HpF-p-HQUxkTZM3VkBxmHnJlCafA0crmCY
- 
+3.  GET : http://localhost:3000/api/banks?API_KEY= ....
+
+
+
+4.  GET : http://localhost:3000/api/accounts?API_KEY= ....
+           
